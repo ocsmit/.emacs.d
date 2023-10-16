@@ -92,7 +92,11 @@
 (set-face-background 'default "#111")
 (set-face-foreground 'font-lock-comment-face "#fc0")
 
-(set-face-attribute 'fringe nil :background nil)
+
+
+(set-face-attribute 'fringe nil
+                      :foreground (face-foreground 'default)
+                      :background (face-background 'default))
 (set-face-attribute 'line-number nil :background nil)
 (set-face-attribute 'mode-line nil :background nil :box nil)
 (set-face-attribute 'mode-line-inactive nil :background nil :box nil)

@@ -508,7 +508,6 @@
   (define-key julia-repl-mode-map (kbd "<M-RET>") 'julia-repl-send-line)
   (define-key julia-repl-mode-map (kbd "<S-return>") 'julia-repl-send-buffer)
   (julia-repl-set-terminal-backend 'vterm)
-
   )
 
 ;; (use-package julia-snail
@@ -520,8 +519,6 @@
 (use-package lsp-julia
   :ensure t
 )
-
-
 
 
 (use-package solaire-mode
@@ -602,17 +599,6 @@
   :ensure t
 )
 
-
-;; (use-package auto-dark
-;;   :config (auto-dark-mode t)
-;;   )
-
-
-;; (use-package yasnippet-radical-snippets
-;;   :ensure t
-;;   :after yasnippet
-;;   :config
-;;   (yasnippet-radical-snippets-initialize))
 
 (provide 'packages)
 ;;; packages.el ends here
