@@ -46,12 +46,12 @@
 ;; ESS -------------------------------------------------------------------------
 ;; R, etc
 
-(add-hook 'ess-mode-hook
-          (lambda ()
-            (ess-set-style 'Rstudio)
-            (add-hook 'local-write-file-hooks
-                       (lambda ()
-                         (ess-nuke-trailing-whitespace)))))
+;; (add-hook 'ess-mode-hook
+;;           (lambda ()
+;;             (ess-set-style 'RStudio)
+;;             (add-hook 'local-write-file-hooks
+;;                        (lambda ()
+;;                          (ess-nuke-trailing-whitespace)))))
 
 (set 'ess-arg-function-offset t)
 

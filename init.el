@@ -50,11 +50,14 @@
 ;; Map ctrl-g to esc
 (global-set-key (kbd "<escape>")      'keyboard-escape-quit)
 
+
+
 (defun reload-emacs-file ()
   "reload .emacs"
   (interactive)
   (load-file "~/.emacs.d/init.el")
   )
 
-(set-face-attribute 'line-number nil :background nil)
-(set-face-attribute 'fringe nil :background nil)
+(add-hook 'after-init-hook
+          (lambda ()
+            (load-theme 'wombat)))

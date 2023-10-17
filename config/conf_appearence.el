@@ -35,9 +35,11 @@
 ;;; style
 (setq tab-bar-show 1)                      ;; hide bar if <= 1 tabs open
 (setq tab-bar-close-button-show nil)       ;; hide tab close / X button
+(setq tab-bar-new-button-show nil)       ;; hide tab close / X button
 (setq tab-bar-tab-hints t)                 ;; show tab numbers
 (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
-(setq  tab-bar-auto-width-max nil)
+;;(setq  tab-bar-auto-width-max nil)
+
 
 ;;; keybindings
 ;; ctrl-tab switches
@@ -49,11 +51,9 @@
 (global-set-key [remap list-buffers] 'ibuffer)
 
 ;; Start Fullscreen (cross-platf)
-(add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
+;;(add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
 ;; Display line numbers
-;;(global-display-line-numbers-mode 1)
-
 ;; only show line numbers in prog buffers
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
@@ -74,6 +74,14 @@
 ;; https://christiantietze.de/posts/2023/01/use-sf-pro-for-sf-symbols-everywhere-in-emacs/
 (set-fontset-font t '(?􀀀 . ?􏿽) "SF Pro Display")
 
+
+
+
+;; Theme
+(set-face-background 'default "#111")
+(set-face-foreground 'font-lock-comment-face "#fc0")
+
+
 ;; Tab bar format
 (defun my/tab-bar-tab-name-format (tab i)
   (propertize
@@ -86,20 +94,27 @@
 (setq tab-bar-tab-name-format-function #'my/tab-bar-tab-name-format)
 (setq tab-bar-tab-name-function #'my/tab-bar-tab-name-function)
 
-
-;; Theme
-(load-theme 'wombat)
-(set-face-background 'default "#111")
-(set-face-foreground 'font-lock-comment-face "#fc0")
-
-
-
 (set-face-attribute 'fringe nil
                       :foreground (face-foreground 'default)
                       :background (face-background 'default))
 (set-face-attribute 'line-number nil :background nil)
 (set-face-attribute 'mode-line nil :background nil :box nil)
 (set-face-attribute 'mode-line-inactive nil :background nil :box nil)
+
+
+
+(set-face-attribute 'tab-bar nil
+                    :background "#111"
+                    :foreground "#8ac6f2"
+                    :height 1.1
+                    )
+
+(set-face-attribute 'tab-bar-tab-inactive nil :background "#111" :foreground "white")
+
+
+
+;;(set-face-attribute bg-tab-active . "#606060")
+
 
 (provide 'conf_appearence)
 ;;; conf_appearence.el ends here
